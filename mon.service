@@ -1,0 +1,16 @@
+[Unit]
+Description=PAFT Monitor Service
+After=paft.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=veeru
+ExecStart=/usr/bin/bash /home/veeru/startmon.sh
+RuntimeDirectory=/home/veeru
+
+
+[Install]
+WantedBy=multi-user.target
